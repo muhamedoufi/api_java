@@ -25,7 +25,7 @@ import jakarta.ws.rs.PathParam;
 
 @Path("myresource")
 public class Ressources {
-	//@Inject
+//	@Inject
 	
 
 //	   @GET
