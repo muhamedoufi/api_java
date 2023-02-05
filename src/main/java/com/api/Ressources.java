@@ -38,12 +38,22 @@ public class Ressources {
 //
 //	    	return  dao.getAllEmployees();
 //	    }
-	   @GET
+	    @GET
+	    @Path("/all")
 	    @Produces("application/json")
 	    public List<Employee> getEmployee() {
 	      EmployeeDAO dao = new EmployeeDAO();
 	      List employees = dao.getAllEmployees();
 	        return employees;
+	    }
+	    
+	    @GET
+	    @Path("/get/{id}")
+	    @Produces("application/json")
+	    public Employee getEmployeeById(@PathParam("id") int id) {
+	      EmployeeDAO dao = new EmployeeDAO();
+	      Employee employee = dao.getEmployeeById(id);
+	        return employee;
 	    }
 
 	

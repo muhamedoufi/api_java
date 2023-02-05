@@ -30,6 +30,7 @@ private SessionFactory factory = SessionUtil.getFactory();
 		}
 	}
 	
+	
 	@Override
 	public Employee getEmployeeById(long id) {
 		Transaction transaction = null;
@@ -51,14 +52,15 @@ private SessionFactory factory = SessionUtil.getFactory();
 	public List<Employee> getAllEmployees() {
 		Transaction transaction = null;
 		List<Employee> Employees = null;
-		try(Session session = factory.openSession()) {
-			transaction = session.beginTransaction();
+//		try(Session session = factory.openSession()) {
+	     Session session = factory.openSession();
+	     transaction = session.beginTransaction();
 			Employees = session.createNativeQuery("Select * from Employee",Employee.class).list();
 			transaction.commit();
-		} catch (Exception e) {
-			if(transaction != null)
-				transaction.rollback();
-		}
+////		} catch (Exception e) {
+//			if(transaction != null)
+//				transaction.rollback();
+//		}
 		return Employees;
 	}
 	
@@ -69,11 +71,15 @@ private SessionFactory factory = SessionUtil.getFactory();
 	         return 0;  
 	     Session session = factory.openSession();
 	      Transaction tx = session.beginTransaction();
-	      String hql = "update Employee set name = :name, age=:age where id = :id";
+	      String hql = "update Employee set name = :name, age=:age, email=:email, phone=:phone where id = :id";
 	      Query query = session.createQuery(hql);
 	      query.setParameter("id",id);
 	      query.setParameter("name",emp.getName());
 	      query.setParameter("age",emp.getAge());
+	      query.setParameter("email",emp.getEmail());
+	      query.setParameter("phone",emp.getPhone());
+
+
 	      int rowCount = query.executeUpdate();
 	      System.out.println("Rows affected: " + rowCount);
 	      tx.commit();
