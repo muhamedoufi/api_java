@@ -25,19 +25,8 @@ import jakarta.ws.rs.PathParam;
 
 @Path("myresource")
 public class Ressources {
-//	@Inject
 	
 
-//	   @GET
-//	    @Produces(MediaType.APPLICATION_JSON)
-//	    public List<Employee> getAll(){
-//	    	Dao dao = new EmployeeDAO();
-//        	
-////        	.forEach(u -> System.out.println(u));
-//
-//
-//	    	return  dao.getAllEmployees();
-//	    }
 	    @GET
 	    @Path("/all")
 	    @Produces("application/json")

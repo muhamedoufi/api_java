@@ -15,6 +15,12 @@ public class JaxRsApplication extends ResourceConfig{
 //	EmployeeDAO dao;
     public JaxRsApplication() {
         packages("com.api");
+        
+        
+        final ResourceConfig resourceConfig = new ResourceConfig();
+//        resourceConfig.register(new CORSFilter());
+//        final final URI uri = ...;
+//        final HttpServer httpServer = GrizzlyHttpServerFactory.createHttpServer(uri, resourceConfig);
     
 }
 //    

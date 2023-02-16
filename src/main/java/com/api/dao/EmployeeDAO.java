@@ -23,6 +23,7 @@ private SessionFactory factory = SessionUtil.getFactory();
 		try(Session session = factory.openSession()) {
 			transaction = session.beginTransaction();
 			session.save(Employee);
+//			session.
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null)
