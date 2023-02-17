@@ -57,8 +57,8 @@ public class Ressources {
 //	    	 "age":19
 //	    }
 	    public Response addEmployee(Employee emp){
-	    emp.setName(emp.getName());
-	    emp.setAge(emp.getAge());
+//	    emp.setName(emp.getName());
+//	    emp.setAge(emp.getAge());
 	            
 	    EmployeeDAO dao = new EmployeeDAO();
 	    dao.saveEmployee(emp);
