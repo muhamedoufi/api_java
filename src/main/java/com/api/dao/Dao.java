@@ -8,15 +8,15 @@ import com.api.entity.Employee;
 public interface Dao{
 	
 
-		void saveEmployee(Employee Employee);
+//		void save(Object object);
 
-		Employee getEmployeeById(long id);
+//		Object getById(long id);
 
-		List<Employee> getAllEmployees();
+//		List<Object> getAll();
 
-		int updateEmployee(int id,Employee Employee);
+//		int update(int id,Employee Employee);
 
-		int deleteEmployeeById(int id);
+		int deleteById(int id);
 
 	}
 

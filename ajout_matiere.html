@@ -326,8 +326,8 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter Nouvelle Employee</span></a>
-                            <a href="#addEtudiantModel" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Etudiant</span></a>
-                            <a href="#addNoteModel" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Note</span></a>
+                            <!-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
+                            <a class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                         </div>
                     </div>
                 </div>
@@ -372,26 +372,26 @@
             <div class="modal-content">
                 <form id="sendForm">
                     <div class="modal-header">
-                        <h4 class="modal-title">Ajouter un matiere</h4>
+                        <h4 class="modal-title">Ajouter un Employee</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>nom</label>
-                            <input type="text" name="nom" class="form-control" required>
+                            <label>Nom</label>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>code</label>
-                            <input type="text" name="code" class="form-control" required>
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" required>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label>Age</label>
                             <input type="number" name="age" min="10" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label>Telephone</label>
                             <input type="number" name="phone" maxlength="8" min="19999999" class="form-control" required>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -422,92 +422,6 @@
             </div>
         </div>
     </div>
-<!-- addNoteModel -->
-<div id="addNoteModel" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="addNote">
-                <div class="modal-header">
-                    <h4 class="modal-title">Ajouter un Etudiant</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Note</label>
-                        <input type="number" name="note" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Etudiant</label>
-                        <select name="etudiant" class="form-control" required id="etudiant">
-                           
-                        </select>
-                        <!-- <input type="number" name="filiere" min="10" class="form-control" required/> -->
-                    </div>
-                    <div class="form-group">
-                        <label>Matiere</label>
-                        <select name="matiere" class="form-control" required id="matiere">
-                           
-                        </select>
-                        <!-- <input type="number" name="filiere" min="10" class="form-control" required/> -->
-                    </div>
-                    <!-- <div class="form-group">
-                        <label>Telephone</label>
-                        <input type="number" name="phone" maxlength="8" min="19999999" class="form-control" required>
-                    </div> -->
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-success" value="Add">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- addVoteModel -->
-    <!--     addEtudiantModel -->
-    <div id="addEtudiantModel" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="addEtud">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Ajouter un Etudiant</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" name="nom" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>matricule</label>
-                            <input type="text" name="matricule" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Filiere</label>
-                            <select name="filiere" class="form-control" required>
-                                <option selected>--selectionnerFiliere--</option>
-                                <option value="INFORMATIQUE">INFORMATIQUE</option>
-                                <option value="BIOLOGIE">BIOLOGIE</option>
-                                <option value="PHYSIQUE">PHYSIQUE</option>
-                                <option value="MATHEMATIQUE">MATHEMATIQUE</option>
-                            </select>
-                            <!-- <input type="number" name="filiere" min="10" class="form-control" required/> -->
-                        </div>
-                        <!-- <div class="form-group">
-                            <label>Telephone</label>
-                            <input type="number" name="phone" maxlength="8" min="19999999" class="form-control" required>
-                        </div> -->
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--  -->
     <!-- Delete Modal HTML -->
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
@@ -530,57 +444,9 @@
         </div>
     </div>
 
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
-    <script src="axios.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
-        let addNote = document.getElementById("addNote");
-        addNote.addEventListener('submit', async function(event) {
-
-// XXX: make a post ajax request
-    event.preventDefault()
-
-    let formData = new FormData(addNote);
-    var payload = {
-        note: formData.get('note'),
-        etudiant: formData.get('etudiant'),
-        matiere: formData.get('matiere'),
-
-    }
-    console.log(payload)
-    let res = await axios.post('http://localhost:9090/api_java/rest/myresource/note/create', payload);
-    let data = res.data;
-    console.log(data);
-    // window.location.reload();
-
-
-    })
-    </script>
-    <script>
-          let addEtud = document.getElementById("addEtud");
-
-          addEtud.addEventListener('submit', async function(event) {
-
-            // XXX: make a post ajax request
-                event.preventDefault()
-
-                let formData = new FormData(addEtud);
-                var payload = {
-                    nom: formData.get('nom'),
-                    matricule: formData.get('matricule'),
-                    filiere: formData.get('filiere'),
-
-                }
-                console.log(payload)
-                let res = await axios.post('http://localhost:9090/api_java/rest/myresource/etudiant/create', payload);
-                let data = res.data;
-                console.log(data);
-                // window.location.reload();
-
-
-                })
-    </script>
-    <script>
-      
         let send_form = document.getElementById('sendForm');
 
         send_form.addEventListener('submit', async function(event) {
@@ -590,13 +456,13 @@
 
             let formData = new FormData(send_form);
             var payload = {
-                nom: formData.get('nom'),
-                code: formData.get('code'),
-                // email: formData.get('email'),
-                // phone: formData.get('phone')
+                name: formData.get('name'),
+                age: formData.get('age'),
+                email: formData.get('email'),
+                phone: formData.get('phone')
 
             }
-            let res = await axios.post('http://localhost:9090/api_java/rest/myresource/matiere/create', payload);
+            let res = await axios.post('http://localhost:8080/api_java/rest/myresource/create', payload);
             let data = res.data;
             console.log(data);
             window.location.reload();
@@ -624,7 +490,7 @@
                 phone: formData.get('phone')
             }
             id = formData.get('id');
-            let res = await axios.put(`http://localhost:9090/api_java/rest/myresource/update/${id}`, payload);
+            let res = await axios.put(`http://localhost:8080/api_java/rest/employeee/myresource/update/${id}`, payload);
             let data = res.data;
             console.log(data);
             window.location.reload();
@@ -638,7 +504,7 @@
             console.log(index);
             var modelBodyEdit = document.getElementById('modelBodyEdit');
             // if (editEmployeeModal.classList.contains('show')) {
-            let res = await axios.get(`http://localhost:9090/api_java/rest/myresource/get/${index}`);
+            let res = await axios.get(`http://localhost:8080/api_java/rest/employee/myresource/get/${index}`);
             data = res.data;
             editEmployeeFormGroup = `<div class="form-group">
                 <input type="hidden" name="id" class="form-control" required value='${data.id}'>
@@ -678,7 +544,7 @@
                 event.preventDefault()
 
 
-                let res = await axios.delete(`http://localhost:9090/api_java/rest/myresource/delete/${index}`);
+                let res = await axios.delete(`http://localhost:8080/api_java/rest/myresource/delete/${index}`);
                 let data = res.data;
                 console.log(data);
                 window.location.reload();
@@ -691,44 +557,23 @@
             // XXX: make a post ajax request
             event.preventDefault()
             var tbody = document.getElementById('tbody');
-            var matier_select = document.getElementById('matiere');
-            var etud_select = document.getElementById('etudiant');
-            let etudiants = await axios.get("http://localhost:9090/api_java/rest/myresource/etudiant/all")
-            let etud_res = etudiants.data;
-            let resmats = await axios.get("http://localhost:9090/api_java/rest/myresource/matiere/all")
-            let matieres = resmats.data
-            let res = await axios.get('http://localhost:9090/api_java/rest/myresource/etudiant/all');
+
+            // let formData = new FormData(send_form);
+            // var payload = {
+            //     name: formData.get('name'),
+            //     age: formData.get('age')
+            // }
+            let res = await axios.get('http://localhost:8080/api_java/rest/myresource/all');
             let data = res.data;
 
-            for (let i = 0; i < etud_res.length; i++) {
-                // console.log(row)
-                tr = `<option value="${etud_res[i]?.id}">${etud_res[i]?.nom??''}</option>`;
-                // data[i].array.forEach(element => {
-
-                var range = document.createRange();
-                range.selectNodeContents(etud_select);
-                var frag = range.createContextualFragment(tr);
-
-                etud_select.appendChild(frag);
-            }
-            for (let i = 0; i < matieres.length; i++) {
-                // console.log(row)
-                tr = `<option value="${matieres[i]?.id}">${matieres[i]?.nom??''}</option>`;
-                // data[i].array.forEach(element => {
-
-                var range = document.createRange();
-                range.selectNodeContents(matier_select);
-                var frag = range.createContextualFragment(tr);
-
-                matier_select.appendChild(frag);
-            }
             for (let i = 0; i < data.length; i++) {
                 // console.log(row)
                 tr = `<tr>
                            
-                            <td>${data[i]?.nom??''}</td>
-                            <td>${data[i]?.matricule??''}</td>
-                            <td>${data[i]?.filiere??''}</td>
+                            <td>${data[i]?.name??''}</td>
+                            <td>${data[i]?.email??''}</td>
+                            <td>${data[i]?.age??''}</td>
+                            <td>${data[i]?.phone??''}</td>
                             <td>
                                 <a href="#editEmployeeModal" id="editi" data-index="${data[i]?.id}" onclick="assignrow(this);" class="edit" data-toggle="modal"><i class="material-icons"  data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 <a href="#deleteEmployeeModal" class="delete" data-index="${data[i]?.id}" onclick="ondelterow(this);" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -763,21 +608,3 @@
 </html>
 
 
-
-<!-- <html>
-
-<head></head>
-
-<body>
-    <form id="sendForm">
-        <input type="text" name="name"><br>
-        <input type="number" name="age">
-        <input type="submit" value="envoyer" />
-    </form>
-
-
-
-</body>
-
-
-</html> -->

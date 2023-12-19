@@ -1,26 +1,29 @@
 package com.api.dao;
 
+import java.util.Collection;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.api.entity.Employee;
+import com.api.entity.Etudiant;
+import com.api.entity.Matiere;
 
 
-public class EmployeeDAO {
+public class EtudiantDao{
 	
 	
 private SessionFactory factory = SessionUtil.getFactory();
 	
 	@SuppressWarnings("deprecation")
-	public void save(Employee Employee) {
+	public void save(Etudiant Etudiant) {
 		Transaction transaction = null;
 		try(Session session = factory.openSession()) {
 			transaction = session.beginTransaction();
-			session.save(Employee);
+			session.save(Etudiant);
 //			session.
 			transaction.commit();
 		} catch (Exception e) {
@@ -30,51 +33,58 @@ private SessionFactory factory = SessionUtil.getFactory();
 	}
 	
 	
-	
-	public Employee getById(long id) {
+	public Etudiant getById(long id) {
 		Transaction transaction = null;
-		Employee Employee = null;
+		Etudiant Etudiant = null;
 		try(Session session = factory.openSession()) {
 			transaction = session.beginTransaction();
-			Employee = session.get(Employee.class, id);
+			Etudiant = session.get(Etudiant.class, id);
+		    Hibernate.initialize(Etudiant.getMatieres());
+
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null)
 				transaction.rollback();
 		}
-		return Employee;
+		return Etudiant;
 	}
 	
 	
-	public List<Employee> getAll() {
+	
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Etudiant> getAll() {
 		Transaction transaction = null;
-		List<Employee> Employees = null;
+		List<Etudiant> Etudiants = null;
 //		try(Session session = factory.openSession()) {
 	     Session session = factory.openSession();
 	     transaction = session.beginTransaction();
-			Employees = session.createNativeQuery("Select * from Employee",Employee.class).list();
+			Etudiants = session.createNativeQuery("Select * from Etudiant",Etudiant.class).list();
 			transaction.commit();
 ////		} catch (Exception e) {
 //			if(transaction != null)
 //				transaction.rollback();
 //		}
-		return Employees;
+		return Etudiants;
 	}
 	
 
 	
-	public int update(int id, Employee emp){
+	public int update(int id, Etudiant etud){
 	     if(id <=0)  
 	         return 0;  
 	     Session session = factory.openSession();
 	      Transaction tx = session.beginTransaction();
-	      String hql = "update Employee set name = :name, age=:age, email=:email, phone=:phone where id = :id";
+	      String hql = "update Etudiant set nom = :nom, matricule=:matricule, filiere=:filiere,matieres=:matieres where id = :id";
 	      Query query = session.createQuery(hql);
 	      query.setParameter("id",id);
-	      query.setParameter("name",emp.getName());
-	      query.setParameter("age",emp.getAge());
-	      query.setParameter("email",emp.getEmail());
-	      query.setParameter("phone",emp.getPhone());
+	      query.setParameter("nom",etud.getNom());
+	      query.setParameter("matricule",etud.getMatricule());
+	      query.setParameter("filiere",etud.getFiliere());
+//	      Collection<Matiere> matieres = etud.getMatieres();
+//	      if (matieres != null && !matieres.isEmpty()) {
+//	          query.setParameter("matieres", matieres);
+//	      }
+//	      query.setParameter("matieres",etud.getMatieres());
 
 
 	      int rowCount = query.executeUpdate();
@@ -89,7 +99,7 @@ private SessionFactory factory = SessionUtil.getFactory();
 	  public int deleteById(int id) {
 	    Session session = factory.openSession();
 	    Transaction tx = session.beginTransaction();
-	    String hql = "delete from Employee where id = :id";
+	    String hql = "delete from Etudiant where id = :id";
 	    Query query = session.createQuery(hql);
 	    query.setParameter("id",id);
 	    int rowCount = query.executeUpdate();

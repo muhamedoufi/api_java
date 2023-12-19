@@ -11,7 +11,7 @@ import java.util.Properties;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.api.entity.Employee;
+import com.api.entity.*;
 
 public class SessionUtil {
 	private static SessionFactory factory;
@@ -36,6 +36,8 @@ public class SessionUtil {
 			
 			configuration.setProperties(settings);
 			configuration.addAnnotatedClass(Employee.class);
+			configuration.addAnnotatedClass(Etudiant.class);
+			configuration.addAnnotatedClass(Matiere.class);
 			
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 					.applySettings(configuration.getProperties())
